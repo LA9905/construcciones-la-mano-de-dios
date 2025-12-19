@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Construcciones la Mano de Dios - Servicios de Construcción y Remodelaciones</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#f5b300', // Amarillo construcción
+                        secondary: '#aa7700', // Naranja oscuro
+                        accent: '#042c78', // Azul profesional
+                        gray: '#333333', // Gris solidez
+                        lightgray: '#dddddd', // Gris claro
+                        white: '#ffffff',
+                        black: '#000000',
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                        heading: ['Jost', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Jost:wght@500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-gray-100 font-sans text-gray antialiased">
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="text-2xl font-heading font-bold text-primary">Construcciones la Mano de Dios</div>
+            <nav class="hidden md:flex space-x-6">
+                <a href="#nosotros" class="text-gray hover:text-accent">Nosotros</a>
+                <a href="#servicios" class="text-gray hover:text-accent">Servicios</a>
+                <a href="#proyectos" class="text-gray hover:text-accent">Proyectos</a>
+                <a href="#contacto" class="text-gray hover:text-accent">Contacto</a>
+            </nav>
+            <button class="md:hidden text-gray focus:outline-none">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative bg-cover bg-center h-screen text-white flex items-center justify-center" style="background-image: url('https://via.placeholder.com/1920x1080?text=Imagen+Construccion');">
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <div class="relative z-10 text-center px-4">
+            <h1 class="text-4xl md:text-6xl font-heading font-bold mb-4">Construimos Tus Sueños</h1>
+            <p class="text-lg md:text-2xl mb-6">Servicios de construcción y remodelaciones profesionales</p>
+            <a href="#contacto" class="bg-primary text-white px-6 py-3 rounded-lg font-bold hover:bg-secondary">Cotiza Gratis</a>
+        </div>
+    </section>
+
+    <!-- Sobre Nosotros -->
+    <section id="nosotros" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-heading text-center mb-8">Sobre Nosotros</h2>
+            <div class="flex flex-col md:flex-row items-center">
+                <img src="https://via.placeholder.com/600x400?text=Imagen+Equipo" alt="Equipo" class="w-full md:w-1/2 mb-6 md:mb-0 rounded-lg shadow-lg">
+                <div class="md:ml-8 text-center md:text-left">
+                    <p class="text-lg mb-4">Somos una empresa dedicada a la construcción y remodelaciones con años de experiencia. Nuestro equipo profesional garantiza calidad y satisfacción.</p>
+                    <p class="text-lg">Dirección: Av Diego Portales 2941, Santiago Región Metropolitana</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios -->
+    <section id="servicios" class="py-16 bg-lightgray">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-heading text-center mb-8">Nuestros Servicios</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <i class="fas fa-hammer text-4xl text-primary mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Obras desde Cero</h3>
+                    <p>Construimos tu proyecto desde los cimientos.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <i class="fas fa-paint-roller text-4xl text-primary mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Remodelación</h3>
+                    <p>Transformamos espacios existentes.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <i class="fas fa-expand text-4xl text-primary mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Ampliaciones</h3>
+                    <p>Expandimos tu hogar o negocio.</p>
+                </div>
+                <!-- Agrega más servicios según la lista -->
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <i class="fas fa-tile text-4xl text-primary mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Pisos y Cerámicos</h3>
+                    <p>Instalación profesional de pisos.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <i class="fas fa-paint-brush text-4xl text-primary mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Pintura</h3>
+                    <p>Acabados perfectos en pintura.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <i class="fas fa-welding text-4xl text-primary mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Soldadura</h3>
+                    <p>Servicios de soldadura experta.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <i class="fas fa-bolt text-4xl text-primary mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Electricidad</h3>
+                    <p>Instalaciones eléctricas seguras.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <i class="fas fa-pipe text-4xl text-primary mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Gasfitería</h3>
+                    <p>Soluciones en plomería.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <i class="fas fa-wood text-4xl text-primary mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Carpintería</h3>
+                    <p>Trabajos en madera de calidad.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <i class="fas fa-swimming-pool text-4xl text-primary mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Piscina</h3>
+                    <p>Construcción y mantenimiento de piscinas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proyectos Recientes -->
+    <section id="proyectos" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-heading text-center mb-8">Proyectos Recientes</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <img src="https://via.placeholder.com/400?text=Proyecto+1" alt="Proyecto 1" class="rounded-lg shadow-lg">
+                <img src="https://via.placeholder.com/400?text=Proyecto+2" alt="Proyecto 2" class="rounded-lg shadow-lg">
+                <img src="https://via.placeholder.com/400?text=Proyecto+3" alt="Proyecto 3" class="rounded-lg shadow-lg">
+                <!-- Agrega más imágenes según necesites -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonios -->
+    <section class="py-16 bg-lightgray">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-heading text-center mb-8">Opiniones de Nuestros Clientes</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <p>"Excelente servicio, recomendados al 100%."</p>
+                    <div class="flex items-center mt-4">
+                        <span class="text-yellow-500">★★★★★</span>
+                        <h4 class="ml-2 font-bold">Cliente 1</h4>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <p>"Profesionales y puntuales."</p>
+                    <div class="flex items-center mt-4">
+                        <span class="text-yellow-500">★★★★★</span>
+                        <h4 class="ml-2 font-bold">Cliente 2</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formulario de Contacto -->
+    <section id="contacto" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-heading text-center mb-8">Formulario de Contacto</h2>
+            <form class="max-w-lg mx-auto bg-gray-50 p-8 rounded-lg shadow-md">
+                <div class="mb-4">
+                    <label for="nombre" class="block text-gray-700">Nombre y Apellido *</label>
+                    <input type="text" id="nombre" class="w-full p-2 border rounded" required>
+                </div>
+                <div class="mb-4">
+                    <label for="email" class="block text-gray-700">Email *</label>
+                    <input type="email" id="email" class="w-full p-2 border rounded" required>
+                </div>
+                <div class="mb-4">
+                    <label for="telefono" class="block text-gray-700">Teléfono *</label>
+                    <input type="tel" id="telefono" class="w-full p-2 border rounded" required>
+                </div>
+                <div class="mb-4">
+                    <label for="servicio" class="block text-gray-700">Servicio Deseado</label>
+                    <input type="text" id="servicio" class="w-full p-2 border rounded">
+                </div>
+                <button type="submit" class="bg-primary text-white px-6 py-3 rounded-lg w-full hover:bg-secondary">Enviar</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray py-8 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <p>Construcciones la Mano de Dios | Correo: euro.medina000@gmail.com | Teléfono: +56999105704</p>
+            <p>Dirección: Av Diego Portales 2941, Santiago Región Metropolitana</p>
+            <div class="mt-4">
+                <a href="#" class="text-white mx-2"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="text-white mx-2"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-white mx-2"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
