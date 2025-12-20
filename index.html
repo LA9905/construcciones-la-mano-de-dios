@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Construcciones la Mano de Dios - Servicios de Construcción y Remodelaciones.</title>
+    
+    <!-- Favicon: Logo en la pestaña del navegador -->
+    <link rel="icon" href="images/logo2.png" type="image/png">
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -29,25 +33,42 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Jost:wght@500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body class="bg-gray-100 font-sans text-gray antialiased">
-    <!-- Header -->
-    <header class="bg-white shadow-md sticky top-0 z-50">
+<body class="bg-gray-100 font-sans text-gray antialiased relative">
+
+    <!-- Header con menú móvil -->
+    <header class="bg-white shadow-md sticky top-0 z-40">
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <div class="text-2xl font-heading font-bold text-primary">Construcciones la Mano de Dios</div>
+            <div class="flex items-center">
+                <!-- Logo en el navbar -->
+                <img src="images/logo2.png" alt="Logo Construcciones la Mano de Dios" class="h-10 w-auto mr-3 md:h-12">
+                <div class="text-2xl font-heading font-bold text-primary">Construcciones la Mano de Dios</div>
+            </div>
+            
+            <!-- Menú desktop -->
             <nav class="hidden md:flex space-x-6">
                 <a href="#nosotros" class="text-gray hover:text-accent">Nosotros</a>
                 <a href="#servicios" class="text-gray hover:text-accent">Servicios</a>
                 <a href="#proyectos" class="text-gray hover:text-accent">Proyectos</a>
                 <a href="#contacto" class="text-gray hover:text-accent">Contacto</a>
             </nav>
-            <button class="md:hidden text-gray focus:outline-none">
-                <i class="fas fa-bars"></i>
+            
+            <!-- Botón hamburguesa móvil -->
+            <button id="menu-btn" class="md:hidden text-gray focus:outline-none z-50">
+                <i class="fas fa-bars text-2xl"></i>
             </button>
         </div>
+        
+        <!-- Menú móvil (oculto por defecto) -->
+        <nav id="mobile-menu" class="hidden md:hidden bg-white shadow-lg absolute top-0 left-0 w-full h-screen z-40 pt-20 px-4">
+            <a href="#nosotros" class="block py-4 text-lg text-gray hover:text-accent border-b">Nosotros</a>
+            <a href="#servicios" class="block py-4 text-lg text-gray hover:text-accent border-b">Servicios</a>
+            <a href="#proyectos" class="block py-4 text-lg text-gray hover:text-accent border-b">Proyectos</a>
+            <a href="#contacto" class="block py-4 text-lg text-gray hover:text-accent">Contacto</a>
+        </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section id="hero" class="relative bg-cover bg-center h-screen text-white flex items-center justify-center" style="background-image: url('https://via.placeholder.com/1920x1080?text=Imagen+Construccion');">
+    <!-- Hero Section con imagen local -->
+    <section id="hero" class="relative bg-cover bg-center h-screen text-white flex items-center justify-center" style="background-image: url('images/contruccion.jpeg');">
         <div class="absolute inset-0 bg-black opacity-50"></div>
         <div class="relative z-10 text-center px-4">
             <h1 class="text-4xl md:text-6xl font-heading font-bold mb-4">Construimos Tus Sueños</h1>
@@ -60,9 +81,9 @@
     <section id="nosotros" class="py-16 bg-white">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl font-heading text-center mb-8">Sobre Nosotros</h2>
-            <div class="flex flex-col md:flex-row items-center">
-                <img src="https://via.placeholder.com/600x400?text=Imagen+Equipo" alt="Equipo" class="w-full md:w-1/2 mb-6 md:mb-0 rounded-lg shadow-lg">
-                <div class="md:ml-8 text-center md:text-left">
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <img src="https://via.placeholder.com/600x400?text=Imagen+Equipo" alt="Equipo" class="w-full md:w-1/2 rounded-lg shadow-lg">
+                <div class="text-center md:text-left">
                     <p class="text-lg mb-4">Somos una empresa dedicada a la construcción y remodelaciones con años de experiencia. Nuestro equipo profesional garantiza calidad y satisfacción.</p>
                     <p class="text-lg">Dirección: Av Diego Portales 2941, Santiago Región Metropolitana</p>
                 </div>
@@ -74,7 +95,7 @@
     <section id="servicios" class="py-16 bg-lightgray">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl font-heading text-center mb-8">Nuestros Servicios</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div class="bg-white p-6 rounded-lg shadow-md text-center">
                     <i class="fas fa-hammer text-4xl text-primary mb-4"></i>
                     <h3 class="text-xl font-bold mb-2">Obras desde Cero</h3>
@@ -90,9 +111,8 @@
                     <h3 class="text-xl font-bold mb-2">Ampliaciones</h3>
                     <p>Expandimos tu hogar o negocio.</p>
                 </div>
-                <!-- Agrega más servicios según la lista -->
                 <div class="bg-white p-6 rounded-lg shadow-md text-center">
-                    <i class="fas fa-tile text-4xl text-primary mb-4"></i>
+                    <i class="fas fa-trowel text-4xl text-primary mb-4"></i>
                     <h3 class="text-xl font-bold mb-2">Pisos y Cerámicos</h3>
                     <p>Instalación profesional de pisos.</p>
                 </div>
@@ -112,12 +132,12 @@
                     <p>Instalaciones eléctricas seguras.</p>
                 </div>
                 <div class="bg-white p-6 rounded-lg shadow-md text-center">
-                    <i class="fas fa-pipe text-4xl text-primary mb-4"></i>
+                    <i class="fas fa-faucet text-4xl text-primary mb-4"></i>
                     <h3 class="text-xl font-bold mb-2">Gasfitería</h3>
                     <p>Soluciones en plomería.</p>
                 </div>
                 <div class="bg-white p-6 rounded-lg shadow-md text-center">
-                    <i class="fas fa-wood text-4xl text-primary mb-4"></i>
+                    <i class="fas fa-tools text-4xl text-primary mb-4"></i>
                     <h3 class="text-xl font-bold mb-2">Carpintería</h3>
                     <p>Trabajos en madera de calidad.</p>
                 </div>
@@ -134,11 +154,10 @@
     <section id="proyectos" class="py-16 bg-white">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl font-heading text-center mb-8">Proyectos Recientes</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <img src="https://via.placeholder.com/400?text=Proyecto+1" alt="Proyecto 1" class="rounded-lg shadow-lg">
-                <img src="https://via.placeholder.com/400?text=Proyecto+2" alt="Proyecto 2" class="rounded-lg shadow-lg">
-                <img src="https://via.placeholder.com/400?text=Proyecto+3" alt="Proyecto 3" class="rounded-lg shadow-lg">
-                <!-- Agrega más imágenes según necesites -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <img src="https://via.placeholder.com/400?text=Proyecto+1" alt="Proyecto 1" class="rounded-lg shadow-lg w-full h-auto">
+                <img src="https://via.placeholder.com/400?text=Proyecto+2" alt="Proyecto 2" class="rounded-lg shadow-lg w-full h-auto">
+                <img src="https://via.placeholder.com/400?text=Proyecto+3" alt="Proyecto 3" class="rounded-lg shadow-lg w-full h-auto">
             </div>
         </div>
     </section>
@@ -150,14 +169,14 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div class="bg-white p-6 rounded-lg shadow-md">
                     <p>"Excelente servicio, recomendados al 100%."</p>
-                    <div class="flex items-center mt-4">
+                    <div class="flex items-center mt-4 justify-center md:justify-start">
                         <span class="text-yellow-500">★★★★★</span>
-                        <h4 class="ml-2 font-bold">Cliente 1</h4>
+                        <h4 class="ml-2 font-bold">Alejandro</h4>
                     </div>
                 </div>
                 <div class="bg-white p-6 rounded-lg shadow-md">
                     <p>"Profesionales y puntuales."</p>
-                    <div class="flex items-center mt-4">
+                    <div class="flex items-center mt-4 justify-center md:justify-start">
                         <span class="text-yellow-500">★★★★★</span>
                         <h4 class="ml-2 font-bold">Cliente 2</h4>
                     </div>
@@ -197,12 +216,29 @@
         <div class="container mx-auto px-4 text-center">
             <p>Construcciones la Mano de Dios | Correo: euro.medina000@gmail.com | Teléfono: +56999105704</p>
             <p>Dirección: Av Diego Portales 2941, Santiago Región Metropolitana</p>
-            <div class="mt-4">
-                <a href="#" class="text-white mx-2"><i class="fab fa-facebook"></i></a>
-                <a href="#" class="text-white mx-2"><i class="fab fa-twitter"></i></a>
-                <a href="#" class="text-white mx-2"><i class="fab fa-instagram"></i></a>
+            <div class="mt-4 text-3xl">
+                <a href="https://facebook.com/tuempresa" target="_blank" class="mx-4 hover:text-primary"><i class="fab fa-facebook"></i></a>
+                <a href="https://instagram.com/tuempresa" target="_blank" class="mx-4 hover:text-primary"><i class="fab fa-instagram"></i></a>
             </div>
         </div>
     </footer>
+
+    <!-- Botón flotante WhatsApp -->
+    <a href="https://wa.me/56999105704?text=Hola%2C%20estoy%20interesado%20en%20sus%20servicios%20de%20construcci%C3%B3n." target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-2xl z-50 hover:bg-green-600 transition transform hover:scale-110">
+        <i class="fab fa-whatsapp text-4xl"></i>
+    </a>
+
+    <!-- Script para menú móvil -->
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            // Cambia icono a X cuando está abierto
+            menuBtn.querySelector('i').classList.toggle('fa-bars');
+            menuBtn.querySelector('i').classList.toggle('fa-times');
+        });
+    </script>
 </body>
 </html>
