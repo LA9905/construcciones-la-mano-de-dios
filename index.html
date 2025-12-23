@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Construcciones la Mano de Dios - Servicios de Construcción y Remodelaciones.</title>
     
-    <!-- Favicon: Logo en la pestaña del navegador -->
     <link rel="icon" href="images/logo2.png" type="image/png">
     
     <script src="https://cdn.tailwindcss.com"></script>
@@ -14,13 +13,11 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: '#f5b300', // Amarillo construcción
-                        secondary: '#aa7700', // Naranja oscuro
-                        accent: '#042c78', // Azul profesional
-                        gray: '#333333', // Gris solidez
-                        lightgray: '#dddddd', // Gris claro
-                        white: '#ffffff',
-                        black: '#000000',
+                        primary: '#f5b300',
+                        secondary: '#aa7700',
+                        accent: '#042c78',
+                        gray: '#333333',
+                        lightgray: '#dddddd',
                     },
                     fontFamily: {
                         sans: ['Poppins', 'sans-serif'],
@@ -35,56 +32,64 @@
 </head>
 <body class="bg-gray-100 font-sans text-gray antialiased relative">
 
-    <!-- Header con menú móvil y teléfono -->
-    <header class="bg-white shadow-md sticky top-0 z-40">
-        <div class="container mx-auto px-4 py-6 flex flex-wrap justify-between items-center">
-            <!-- Logo -->
+    <!-- Header con efecto transparente + scroll -->
+    <header class="fixed top-0 left-0 w-full z-40 transition-all duration-300" id="navbar">
+        <div class="container mx-auto px-4 py-4 md:py-6 flex justify-between items-center">
+            <!-- Logo responsivo -->
             <div class="flex items-center">
-                <img src="images/logo2.png" alt="Construcciones la Mano de Dios" class="h-20 w-auto md:h-28">
+                <img src="images/logo2.png" alt="Construcciones la Mano de Dios" 
+                     class="h-16 w-auto sm:h-20 md:h-28 drop-shadow-lg">
             </div>
             
             <!-- Menú desktop + Teléfono -->
             <div class="hidden md:flex items-center space-x-8">
                 <nav class="flex space-x-8 text-lg">
-                    <a href="#nosotros" class="text-gray hover:text-accent font-medium">Nosotros</a>
-                    <a href="#servicios" class="text-gray hover:text-accent font-medium">Servicios</a>
-                    <a href="#proyectos" class="text-gray hover:text-accent font-medium">Proyectos</a>
-                    <a href="#contacto" class="text-gray hover:text-accent font-medium">Contacto</a>
+                    <a href="#nosotros" class="nav-link hover:text-primary font-medium transition">Nosotros</a>
+                    <a href="#servicios" class="nav-link hover:text-primary font-medium transition">Servicios</a>
+                    <a href="#proyectos" class="nav-link hover:text-primary font-medium transition">Proyectos</a>
+                    <a href="#contacto" class="nav-link hover:text-primary font-medium transition">Contacto</a>
                 </nav>
                 
-                <!-- Teléfono en navbar (solo desktop) -->
-                <a href="tel:+56999105704" class="flex items-center text-gray hover:text-primary font-semibold whitespace-nowrap border-l-2 border-gray-300 pl-8">
-                    <i class="fas fa-phone-alt text-primary mr-3 text-xl"></i>
+                <a href="tel:+56999105704" class="flex items-center nav-link hover:text-primary font-semibold whitespace-nowrap border-l-2 border-gray-400 pl-8">
+                    <i class="fas fa-phone-alt nav-icon mr-3 text-xl"></i>
                     <span>+56 9 9910 5704</span>
                 </a>
             </div>
             
             <!-- Botón hamburguesa móvil -->
-            <button id="menu-btn" class="md:hidden text-gray focus:outline-none z-50">
-                <i class="fas fa-bars text-3xl"></i>
+            <button id="menu-btn" class="md:hidden text-white focus:outline-none z-50">
+                <i class="fas fa-bars text-3xl drop-shadow"></i>
             </button>
         </div>
         
-        <!-- Menú móvil -->
-        <nav id="mobile-menu" class="hidden md:hidden bg-white shadow-lg absolute top-0 left-0 w-full h-screen z-40 pt-32 px-4">
-            <a href="#nosotros" class="block py-4 text-xl text-gray hover:text-accent border-b">Nosotros</a>
-            <a href="#servicios" class="block py-4 text-xl text-gray hover:text-accent border-b">Servicios</a>
-            <a href="#proyectos" class="block py-4 text-xl text-gray hover:text-accent border-b">Proyectos</a>
-            <a href="#contacto" class="block py-4 text-xl text-gray hover:text-accent border-b">Contacto</a>
-            <!-- Teléfono también en menú móvil para fácil acceso -->
-            <a href="tel:+56999105704" class="block py-4 text-xl text-primary font-bold border-b">
-                <i class="fas fa-phone-alt mr-3"></i> +56 9 9910 5704
-            </a>
+        <!-- Menú móvil-->
+        <nav id="mobile-menu" class="hidden md:hidden bg-white shadow-2xl absolute top-0 left-0 w-full h-screen z-50">
+            <!-- Botón cerrar -->
+            <div class="flex justify-end p-6">
+                <button id="close-menu" class="text-gray-600 text-4xl focus:outline-none">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <!-- Contenido centrado verticalmente -->
+            <div class="flex-1 flex flex-col justify-center px-8 space-y-8">
+                <a href="#nosotros" class="mobile-nav-link block text-2xl text-gray-800 hover:text-primary font-medium text-center py-4 border-b-2 border-gray-200">Nosotros</a>
+                <a href="#servicios" class="mobile-nav-link block text-2xl text-gray-800 hover:text-primary font-medium text-center py-4 border-b-2 border-gray-200">Servicios</a>
+                <a href="#proyectos" class="mobile-nav-link block text-2xl text-gray-800 hover:text-primary font-medium text-center py-4 border-b-2 border-gray-200">Proyectos</a>
+                <a href="#contacto" class="mobile-nav-link block text-2xl text-gray-800 hover:text-primary font-medium text-center py-4 border-b-2 border-gray-200">Contacto</a>
+                <a href="tel:+56999105704" class="block text-2xl text-primary font-bold text-center py-6">
+                    <i class="fas fa-phone-alt mr-3"></i> +56 9 9910 5704
+                </a>
+            </div>
         </nav>
     </header>
 
-    <!-- Hero Section con imagen local -->
+    <!-- Hero Section -->
     <section id="hero" class="relative bg-cover bg-center h-screen text-white flex items-center justify-center" style="background-image: url('images/construccion.jpeg');">
         <div class="absolute inset-0 bg-black opacity-50"></div>
-        <div class="relative z-10 text-center px-4">
-            <h1 class="text-4xl md:text-6xl font-heading font-bold mb-4">Construimos Tus Sueños</h1>
-            <p class="text-lg md:text-2xl mb-6">Servicios de construcción y remodelaciones profesionales</p>
-            <a href="#contacto" class="bg-primary text-white px-6 py-3 rounded-lg font-bold hover:bg-secondary">Cotiza Gratis</a>
+        <div class="relative z-10 text-center px-6 max-w-4xl">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-heading font-bold mb-4 drop-shadow-2xl">Construimos Tus Sueños</h1>
+            <p class="text-lg sm:text-xl md:text-2xl mb-8 drop-shadow-lg">Servicios de construcción y remodelaciones profesionales</p>
+            <a href="#contacto" class="inline-block bg-primary text-white px-8 py-4 rounded-lg text-xl font-bold hover:bg-secondary transition shadow-lg">Cotiza Gratis</a>
         </div>
     </section>
 
@@ -123,7 +128,7 @@
                     <p>Expandimos tu hogar o negocio.</p>
                 </div>
                 <div class="bg-white p-6 rounded-lg shadow-md text-center">
-                    <i class="fas fa-trowel text-4xl text-primary mb-4"></i>
+                    <i class="fas fa-grip-lines text-4xl text-primary mb-4"></i>
                     <h3 class="text-xl font-bold mb-2">Pisos y Cerámicos</h3>
                     <p>Instalación profesional de pisos.</p>
                 </div>
@@ -133,7 +138,7 @@
                     <p>Acabados perfectos en pintura.</p>
                 </div>
                 <div class="bg-white p-6 rounded-lg shadow-md text-center">
-                    <i class="fas fa-welding text-4xl text-primary mb-4"></i>
+                    <i class="fas fa-fire-flame-curved text-4xl text-primary mb-4"></i>
                     <h3 class="text-xl font-bold mb-2">Soldadura</h3>
                     <p>Servicios de soldadura experta.</p>
                 </div>
@@ -161,7 +166,7 @@
         </div>
     </section>
 
-    <!-- Proyectos Recientes -->
+    <!-- Proyectos, Testimonios, Contacto y Footer-->
     <section id="proyectos" class="py-16 bg-white">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl font-heading text-center mb-8">Proyectos Recientes</h2>
@@ -176,81 +181,156 @@
         </div>
     </section>
 
-    <!-- Testimonios -->
     <section class="py-16 bg-lightgray">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl font-heading text-center mb-8">Opiniones de Nuestros Clientes</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div class="bg-white p-6 rounded-lg shadow-md">
-                    <p>"Excelente servicio, recomendados al 100%."</p>
+                    <p>"Excelente servicio, recomendados al 100%. Los contrate para una ampliacacion y quede muy satisfecho."</p>
                     <div class="flex items-center mt-4 justify-center md:justify-start">
                         <span class="text-yellow-500">★★★★★</span>
                         <h4 class="ml-2 font-bold">Alejandro</h4>
                     </div>
                 </div>
                 <div class="bg-white p-6 rounded-lg shadow-md">
-                    <p>"Profesionales y puntuales."</p>
+                    <p>"Profesionales y puntuales, siempre hubo comunicacion y la Remodelacion quedo excelente."</p>
                     <div class="flex items-center mt-4 justify-center md:justify-start">
                         <span class="text-yellow-500">★★★★★</span>
-                        <h4 class="ml-2 font-bold">Cliente 2</h4>
+                        <h4 class="ml-2 font-bold">Jose Medina</h4>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Formulario de Contacto -->
-    <section id="contacto" class="py-16 bg-white">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-heading text-center mb-8">Formulario de Contacto</h2>
-            <form class="max-w-lg mx-auto bg-gray-50 p-8 rounded-lg shadow-md">
-                <div class="mb-4">
-                    <label for="nombre" class="block text-gray-700">Nombre y Apellido *</label>
-                    <input type="text" id="nombre" class="w-full p-2 border rounded" required>
-                </div>
-                <div class="mb-4">
-                    <label for="email" class="block text-gray-700">Email *</label>
-                    <input type="email" id="email" class="w-full p-2 border rounded" required>
-                </div>
-                <div class="mb-4">
-                    <label for="telefono" class="block text-gray-700">Teléfono *</label>
-                    <input type="tel" id="telefono" class="w-full p-2 border rounded" required>
-                </div>
-                <div class="mb-4">
-                    <label for="servicio" class="block text-gray-700">Servicio Deseado</label>
-                    <input type="text" id="servicio" class="w-full p-2 border rounded">
-                </div>
-                <button type="submit" class="bg-primary text-white px-6 py-3 rounded-lg w-full hover:bg-secondary">Enviar</button>
-            </form>
+<!-- Formulario de Contacto -->
+<section id="contacto" class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-heading text-center mb-8">Formulario de Contacto</h2>
+        
+        <!-- Mensaje de éxito personalizado -->
+        <div id="success-message" class="hidden max-w-lg mx-auto bg-green-100 border border-green-400 text-green-700 px-8 py-6 rounded-lg shadow-md mb-8 text-center">
+            <i class="fas fa-check-circle text-6xl mb-4 text-green-500"></i>
+            <h3 class="text-2xl font-bold mb-2">¡Mensaje enviado exitosamente!</h3>
+            <p class="text-lg">Gracias por contactarnos. Te responderemos a la brevedad posible.</p>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-gray py-8 text-white">
-        <div class="container mx-auto px-4 text-center">
-            <p>Construcciones la Mano de Dios | Correo: euro.medina000@gmail.com | Teléfono: +56999105704</p>
-            <p>Dirección: Av Diego Portales 2941, Santiago Región Metropolitana</p>
-            <div class="mt-4 text-3xl">
-                <a href="https://facebook.com/tuempresa" target="_blank" class="mx-4 hover:text-primary"><i class="fab fa-facebook"></i></a>
-                <a href="https://instagram.com/tuempresa" target="_blank" class="mx-4 hover:text-primary"><i class="fab fa-instagram"></i></a>
+        
+        <!-- Formulario -->
+        <form id="contact-form" 
+              action="https://formsubmit.co/euromedina000@gmail.com" 
+              method="POST" 
+              class="max-w-lg mx-auto bg-gray-50 p-8 rounded-lg shadow-md">
+            <div class="mb-4">
+                <label for="nombre" class="block text-gray-700 font-medium">Nombre y Apellido *</label>
+                <input type="text" name="nombre" id="nombre" class="w-full p-3 border border-gray-300 rounded mt-1 focus:outline-none focus:ring-2 focus:ring-primary" required>
             </div>
-        </div>
-    </footer>
+            <div class="mb-4">
+                <label for="email" class="block text-gray-700 font-medium">Email *</label>
+                <input type="email" name="email" id="email" class="w-full p-3 border border-gray-300 rounded mt-1 focus:outline-none focus:ring-2 focus:ring-primary" required>
+            </div>
+            <div class="mb-4">
+                <label for="telefono" class="block text-gray-700 font-medium">Teléfono *</label>
+                <input type="tel" name="telefono" id="telefono" class="w-full p-3 border border-gray-300 rounded mt-1 focus:outline-none focus:ring-2 focus:ring-primary" required>
+            </div>
+            <div class="mb-4">
+                <label for="servicio" class="block text-gray-700 font-medium">Servicio Deseado</label>
+                <input type="text" name="servicio" id="servicio" class="w-full p-3 border border-gray-300 rounded mt-1 focus:outline-none focus:ring-2 focus:ring-primary">
+            </div>
+            <div class="mb-6">
+                <label for="mensaje" class="block text-gray-700 font-medium">Mensaje *</label>
+                <textarea name="mensaje" id="mensaje" rows="5" class="w-full p-3 border border-gray-300 rounded mt-1 focus:outline-none focus:ring-2 focus:ring-primary" required></textarea>
+            </div>
+            
+            <!-- Configuración FormSubmit -->
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_autoresponse" value="¡Gracias por tu mensaje! Hemos recibido tu consulta y te contactaremos pronto. Equipo Construcciones La Mano de Dios">
+            <input type="hidden" name="_subject" value="Nuevo contacto desde el sitio web">
+            <input type="hidden" name="_template" value="table">
+           
+            
+            <button type="submit" class="bg-primary text-white px-8 py-4 rounded-lg w-full hover:bg-secondary font-bold text-lg transition shadow-lg">
+                Enviar Mensaje
+            </button>
+        </form>
+    </div>
+</section>
 
-    <!-- Botón flotante WhatsApp -->
+    <footer class="bg-gray py-8 text-white">
+    <div class="container mx-auto px-4 text-center">
+        <p class="mb-4">Construcciones la Mano de Dios | Correo: euromedina000@gmail.com | Teléfono: +56999105704</p>
+        <p class="mb-4">Dirección: Av Diego Portales 2941, Santiago Región Metropolitana</p>
+        
+        <!-- Redes sociales -->
+        <div class="mt-4 mb-6 text-3xl">
+            <a href="https://facebook.com/tuempresa" target="_blank" class="mx-4 hover:text-primary"><i class="fab fa-facebook"></i></a>
+            <a href="https://instagram.com/tuempresa" target="_blank" class="mx-4 hover:text-primary"><i class="fab fa-instagram"></i></a>
+        </div>
+        
+        <!-- Firma del desarrollador -->
+        <div class="mt-8 pt-6 border-t border-gray-600 text-sm">
+            <p>© 2025 Construcciones la Mano de Dios. Todos los derechos reservados.</p>
+            <p class="mt-2">
+                Developed with <span class="text-red-500">❤️</span> by 
+                <a href="https://www.linkedin.com/in/alejandro-arraga/" target="_blank" class="text-primary hover:underline font-medium">Alejandro Arraga</a> 
+                <a href="https://github.com/LA9905" target="_blank" class="text-primary hover:underline font-medium">LA9905</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+    <!-- WhatsApp flotante -->
     <a href="https://wa.me/56999105704?text=Hola%2C%20estoy%20interesado%20en%20sus%20servicios%20de%20construcci%C3%B3n." target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-2xl z-50 hover:bg-green-600 transition transform hover:scale-110">
         <i class="fab fa-whatsapp text-4xl"></i>
     </a>
 
-    <!-- Script para menú móvil -->
     <script>
         const menuBtn = document.getElementById('menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
+        const closeMenuBtn = document.getElementById('close-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+        const navbar = document.getElementById('navbar');
+        const navLinks = document.querySelectorAll('.nav-link');
+        const navIcons = document.querySelectorAll('.nav-icon');
 
+        // Abrir/cerrar menú
         menuBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
             menuBtn.querySelector('i').classList.toggle('fa-bars');
             menuBtn.querySelector('i').classList.toggle('fa-times');
+        });
+
+        closeMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            menuBtn.querySelector('i').classList.add('fa-bars');
+            menuBtn.querySelector('i').classList.remove('fa-times');
+        });
+
+        // Cerrar menú al hacer clic en cualquier enlace
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuBtn.querySelector('i').classList.add('fa-bars');
+                menuBtn.querySelector('i').classList.remove('fa-times');
+            });
+        });
+
+        // Efecto scroll navbar
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                navbar.classList.add('bg-white', 'shadow-lg');
+                navbar.classList.remove('bg-transparent');
+                navLinks.forEach(l => { l.classList.remove('text-white'); l.classList.add('text-gray'); });
+                navIcons.forEach(i => i.classList.add('text-primary'));
+                menuBtn.classList.remove('text-white');
+                menuBtn.classList.add('text-gray');
+            } else {
+                navbar.classList.remove('bg-white', 'shadow-lg');
+                navbar.classList.add('bg-transparent');
+                navLinks.forEach(l => { l.classList.add('text-white'); l.classList.remove('text-gray'); });
+                navIcons.forEach(i => i.classList.remove('text-primary'));
+                menuBtn.classList.add('text-white');
+                menuBtn.classList.remove('text-gray');
+            }
         });
     </script>
 </body>
