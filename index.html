@@ -240,22 +240,25 @@
 
             <input type="hidden" name="access_key" value="6464857a-a63c-4109-99fb-b780513c7614">
 
-            <!-- Subject del email que recibe yo -->
+            <!-- Subject del email que recibo yo -->
             <input type="hidden" name="subject" value="Nuevo contacto desde el sitio web">
 
-            <!-- Redirección-->
+            <!-- Redirección -->
             <input type="hidden" name="redirect" value="https://www.construccioneslamanodedios.com/?success=true#contacto">
 
-            <!-- Autoresponse genérico-->
+            <!-- Autoresponse: Web3Forms lo envía automáticamente al email del formulario si existe este campo -->
             <input type="hidden" name="autoresponse" value="¡Hola! Gracias por contactar a Construcciones La Mano de Dios. Hemos recibido tu mensaje y te responderemos en las próximas horas. ¡Que tengas un excelente día!">
 
-            <div class="mb-4">
-                <label for="nombre" class="block text-gray-700 font-medium">Nombre y Apellido *</label>
-                <input type="text" name="nombre" id="nombre" class="w-full p-3 border border-gray-300 rounded mt-1 focus:outline-none focus:ring-2 focus:ring-primary" required>
-            </div>
+            <!-- Campo de email-->
             <div class="mb-4">
                 <label for="email" class="block text-gray-700 font-medium">Email *</label>
                 <input type="email" name="email" id="email" class="w-full p-3 border border-gray-300 rounded mt-1 focus:outline-none focus:ring-2 focus:ring-primary" required>
+            </div>
+
+            <!-- Resto de campos (nombre, teléfono, etc.)-->
+            <div class="mb-4">
+                <label for="nombre" class="block text-gray-700 font-medium">Nombre y Apellido *</label>
+                <input type="text" name="nombre" id="nombre" class="w-full p-3 border border-gray-300 rounded mt-1 focus:outline-none focus:ring-2 focus:ring-primary" required>
             </div>
             <div class="mb-4">
                 <label for="telefono" class="block text-gray-700 font-medium">Teléfono *</label>
