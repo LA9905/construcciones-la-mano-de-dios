@@ -194,6 +194,24 @@
                 <img src="images/obra4.jpeg" alt="Proyecto 4" class="rounded-lg shadow-lg w-full h-64 object-cover">
                 <img src="images/obra5.webp" alt="Proyecto 5" class="rounded-lg shadow-lg w-full h-64 object-cover">
                 <img src="images/obra6.jpg" alt="Proyecto 6" class="rounded-lg shadow-lg w-full h-64 object-cover">
+            <!-- VIDEO -->
+                <div class="rounded-lg shadow-lg overflow-hidden">
+                    <video 
+                        class="w-full h-64 object-cover" 
+                        controls 
+                        muted 
+                        loop 
+                        autoplay 
+                        playsinline 
+                        poster="images/obra4.jpeg" 
+                        preload="metadata">
+                        <source src="images/construccion.mp4" type="video/mp4">
+                        Tu navegador no soporta la reproducción de video.
+                    </video>
+                    <div class="p-4 bg-gray-100 text-center">
+                        <p class="font-medium text-gray-800">Muestra de nuestro de trabajo</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -363,6 +381,18 @@
         document.getElementById('success-message').classList.remove('hidden');
         // Limpiar la URL sin recargar
         history.replaceState({}, document.title, window.location.pathname + '#contacto');
+    }
+    </script>
+
+    <!-- Fragmento de evento de conversión de Google Ads -->
+    <!-- Se ejecuta SOLO cuando el formulario se envía con éxito (?success=true) -->
+    <script>
+    if (window.location.search.includes('success=true')) {
+        gtag('event', 'conversion', {
+            'send_to': 'AW-17827266781/KEZ7CI7_oNYbEN2B2rRC',
+            'value': 1.0,
+            'currency': 'CLP'
+        });
     }
     </script>
 
